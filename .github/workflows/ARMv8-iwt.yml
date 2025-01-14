@@ -1,4 +1,4 @@
-name: ARMv8 N1 Plus OpenWrt
+name: ARMv8 immortalwrt
 
 on:
   workflow_dispatch:
@@ -6,17 +6,17 @@ on:
   #  - cron: 0 20 * * *
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
-  CONFIG_FILE: configs/armv8-n1-plus.config
-  DIY_SCRIPT: diy-n1.sh
+  CONFIG_FILE: configs/ARMv8-iwt.config
+  DIY_SCRIPT: diy-iwt.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: ROOTFS_PLUS
+  FIRMWARE_TAG: ROOTFS_IWT_PLUS
   OPENWRT_RELEASE: true
-  OPENWRT_TAG: ARMv8_N1_PLUS
+  OPENWRT_TAG: ARMv8_IWT_PLUS
   TZ: Asia/Shanghai
 
 jobs:
@@ -199,7 +199,7 @@ jobs:
         body: |
           **This is Temporary Firmware for Armvirt 64**
           ### 📒 固件信息
-          - 🚀 成品固件点击此处跳转➦[PLUS](https://github.com/imaomao/OpenWrt/releases/tag/ARMv8_N1_PLUS)即可下载
+          - 🚀 成品固件点击此处跳转➦[PLUS](https://github.com/imaomao/OpenWrt/releases/tag/ARMv8_iwt)即可下载
           - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }} (多功能临时固件)
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
@@ -258,9 +258,9 @@ jobs:
         #PACKAGE_SOC: all
         PACKAGE_SOC: s905d
         KERNEL_VERSION_NAME: 6.1.y_6.6.y
-        WHOAMI: Haiibo
+        WHOAMI: im
         KERNEL_AUTO_LATEST: true
-        DISTRIB_REVISION: R${{ env.DATE1 }} by Haiibo
+        DISTRIB_REVISION: R${{ env.DATE1 }} by im
 
     - name: Upload OpenWrt To Artifact
       if: env.PACKAGED_STATUS == 'success' && env.OPENWRT_RELEASE != 'true'
