@@ -124,5 +124,8 @@ git_sparse_clone main https://github.com/linkease/istore luci
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 
+# 修复trojan-plus的asio、char编译
+cp -f $GITHUB_WORKSPACE/scripts/fix_trojan_plus_asio_char_error.patch feeds/packages/net/trojan-plus/patches/deprecated_functions.patch
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
