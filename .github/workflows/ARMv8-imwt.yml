@@ -1,4 +1,4 @@
-name: ARMv8 immortalwrt
+name: ARMv8 imwt
 
 on:
   workflow_dispatch:
