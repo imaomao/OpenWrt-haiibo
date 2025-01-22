@@ -124,6 +124,13 @@ git_sparse_clone main https://github.com/haiibo/packages luci-app-onliner
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 
+# flowoffload
+svn co https://github.com/breakings/OpenWrt/trunk/general/luci-app-flowoffload package/lean/luci-app-flowoffload
+
+# n2n_v2
+svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/n2n_v2 package/lean/n2n_v2
+svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-n2n_v2 package/lean/luci-app-n2n_v2
+
 # 修复trojan-plus的asio、char编译
 # ls -al feeds/packages/net/trojan-plus
 mkdir -p feeds/packages/net/trojan-plus/patches
