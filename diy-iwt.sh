@@ -137,8 +137,8 @@ mkdir -p feeds/packages/net/trojan-plus/patches
 cp -f $GITHUB_WORKSPACE/scripts/fix_trojan_plus_asio_char_error.patch feeds/packages/net/trojan-plus/patches/deprecated_functions.patch
 
 # 修复node编译失败问题
-# rm -rf feeds/packages/lang/node
-# git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-24.10 feeds/packages/lang/node
+rm -rf feeds/packages/lang/node
+git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-24.10 feeds/packages/lang/node
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
